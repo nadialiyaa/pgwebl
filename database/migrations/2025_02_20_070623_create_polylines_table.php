@@ -6,13 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('polylines', function (Blueprint $table) {
             $table->id();
+            $table->geometry('geom');
+            $table->string('name');
+            $table->text('description');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
