@@ -34,27 +34,44 @@ class PolygonsController extends Controller
     public function store(Request $request)
     {
         // Validate request
-        $request->validate([
-            'name' => 'required|unique:points,name',
-            'description' => 'required',
-            'geom_polygon' => 'required',
-        ],
-        [
-            'name.required' => 'Name is required',
-            'name.unique' => 'Name already exists',
-            'description.required' => 'Description is required',
-            'geom_polygon.required' => 'Geometry Polygon is required',
-        ]
+        $request->validate(
+            [
+                'name' => 'required|unique:points,name',
+                'description' => 'required',
+                'geom_polygon' => 'required',
+                'image' => 'image|mimes:jpg,png|max:2048'
+            ],
+            [
+                'name.required' => 'Name is required',
+                'name.unique' => 'Name already exists',
+                'description.required' => 'Description is required',
+                'geom_polygon.required' => 'Geometry Polygon is required',
+            ]
         );
+
+        //Create image directory
+        if (!is_dir('storage/images')) {
+            mkdir('./storage/images', 0777);
+        }
+
+        //Get Image file
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $name_image = time() . "_polygon." . strtolower($image->getClientOriginalExtension());
+            $image->move('storage/images', $name_image);
+        } else {
+            $name_image = null;
+        }
 
         $data = [
             'geom' => $request->geom_polygon,
             'name' => $request->name,
             'description' => $request->description,
+            'image' => $name_image,
         ];
 
         // Create Data
-        if(!$this->polygons->create($data)) {
+        if (!$this->polygons->create($data)) {
             return redirect()->route('map')->with('error', 'Polygon failed to add');
         }
 
