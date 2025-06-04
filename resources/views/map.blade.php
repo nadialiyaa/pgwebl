@@ -256,16 +256,17 @@
                     "' width='200' alt=''>" +
                     "<br>" +
                     "<div class='row mt-2'>" +
-                        "<div class='col-6 text-start'>" +
-                            "<a href='" + routeedit + "' class='btn btn-warning btn-sm'><i class='fa-solid fa-pen-to-square'></i>  Edit</a>" +
+                    "<div class='col-6 text-start'>" +
+                    "<a href='" + routeedit +
+                    "' class='btn btn-warning btn-sm'><i class='fa-solid fa-pen-to-square'></i>  Edit</a>" +
                     "</div>" +
                     "<div class='col-6 text-start'>" +
-                        "<form method='POST' action='" + routedelete + "'>" +
-                            '@csrf' + '@method('DELETE')' +
-                            "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure want to delete it?`)'><i class='fa-solid fa-trash-can'></i>  Hapus</button>" +
-                            "</form>" +
-                        "</div>" +
-                    "</div>";
+                    "<form method='POST' action='" + routedelete + "'>" +
+                    '@csrf' + '@method('DELETE')' +
+                    "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure want to delete it?`)'><i class='fa-solid fa-trash-can'></i>  Hapus</button>" +
+                    "</form>" +
+                    "</div>" + "<br>" + "<p>Dibuat Oleh: " + feature.properties.user_created + "</p>";
+                "</div>";
 
                 layer.on({
                     click: function(e) {
@@ -299,14 +300,17 @@
                     "' width='200' alt=''>" +
                     "<br>" +
                     "<div class='row mt-2'>" +
-                        "<div class='col-6 text-start'>" +
-                            "<a href='" + routeedit + "' class='btn btn-warning btn-sm'><i class='fa-solid fa-pen-to-square'></i>  Edit</a>" +
+                    "<div class='col-6 text-start'>" +
+                    "<a href='" + routeedit +
+                    "' class='btn btn-warning btn-sm'><i class='fa-solid fa-pen-to-square'></i>  Edit</a>" +
                     "</div>" +
                     "<div class='col-6 text-start'>" +
                     "<form method='POST' action='" + routedelete + "'>" +
                     '@csrf' + '@method('DELETE')' +
                     "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure want to delete it?`)'><i class='fa-solid fa-trash-can'></i></button>" +
-                    "</form>";
+                    "</form>" +
+                    "</div>" + "<br>" + "<p>Dibuat Oleh: " + feature.properties.user_created + "</p>";
+                "</div>";
 
                 layer.on({
                     click: function(e) {
@@ -340,14 +344,17 @@
                     "' width='200' alt=''>" +
                     "<br>" +
                     "<div class='row mt-2'>" +
-                        "<div class='col-6 text-start'>" +
-                            "<a href='" + routeedit + "' class='btn btn-warning btn-sm'><i class='fa-solid fa-pen-to-square'></i>  Edit</a>" +
+                    "<div class='col-6 text-start'>" +
+                    "<a href='" + routeedit +
+                    "' class='btn btn-warning btn-sm'><i class='fa-solid fa-pen-to-square'></i>  Edit</a>" +
                     "</div>" +
                     "<div class='col-6 text-start'>" +
                     "<form method='POST' action='" + routedelete + "'>" +
                     '@csrf' + '@method('DELETE')' +
                     "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`Are you sure want to delete it?`)'><i class='fa-solid fa-trash-can'></i></button>" +
-                    "</form>";
+                    "</form>" +
+                    "</div>" + "<br>" + "<p>Dibuat Oleh: " + feature.properties.user_created + "</p>";
+                "</div>";
 
                 layer.on({
                     click: function(e) {
